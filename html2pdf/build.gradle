@@ -1,0 +1,27 @@
+plugins {
+    id("java")
+    id 'org.springframework.boot' version '3.1.5'
+    id 'io.spring.dependency-management' version '1.1.3'
+}
+
+group = "org.olegs"
+version = "1.0-SNAPSHOT"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation(platform("org.junit:junit-bom:5.10.0"))
+    testImplementation("org.junit.jupiter:junit-jupiter")
+    implementation("org.xhtmlrenderer:flying-saucer-pdf:9.1.20")
+    implementation("org.thymeleaf:thymeleaf:3.0.12.RELEASE")
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.mockito:mockito-core'
+
+}
+
+tasks.test {
+    useJUnitPlatform()
+}
