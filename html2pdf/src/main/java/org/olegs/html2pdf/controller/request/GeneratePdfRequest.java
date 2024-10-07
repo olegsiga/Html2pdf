@@ -4,7 +4,7 @@ import java.util.Map;
 
 public class GeneratePdfRequest {
     private String htmlTemplate;
-    private Map<String, Object> data;
+    private Map<String, String> data;
 
     public String getHtmlTemplate() {
         return htmlTemplate;
@@ -14,11 +14,11 @@ public class GeneratePdfRequest {
         this.htmlTemplate = htmlTemplate;
     }
 
-    public Map<String, Object> getData() {
+    public Map<String, String> getData() {
         return data;
     }
 
-    public void setData(Map<String, Object> data) {
+    public void setData(Map<String, String> data) {
         this.data = data;
     }
 }

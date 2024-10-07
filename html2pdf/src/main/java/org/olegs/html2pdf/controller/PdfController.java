@@ -19,11 +19,12 @@ public class PdfController {
         this.pdfService = pdfService;
     }
 
-    @PostMapping(value = "/generate", produces = MediaType.APPLICATION_PDF_VALUE)
+    @PostMapping("/generate")
     public ResponseEntity<byte[]> generatePdf(@RequestBody GeneratePdfRequest request) {
-        byte[] pdfBytes = pdfService.generatePdf(request.getHtmlTemplate(), request.getData());
-        return ResponseEntity.ok()
-                .contentType(MediaType.APPLICATION_PDF)
-                .body(pdfBytes);
+        // Controller logic here
+        ResponseEntity<byte[]> body = ResponseEntity.ok().contentType(MediaType.APPLICATION_PDF)
+                .header("Content-Disposition", "attachment; filename=generated.pdf")
+                .body(new byte[0]);
+        return body;
     }
 }
